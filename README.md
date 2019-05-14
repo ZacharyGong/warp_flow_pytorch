@@ -1,4 +1,4 @@
-# Warp Flow with Pytorch
+# Warp Flow with PyTorch
 This repository contains the PyTorch implementation of optical flow warping. The implementation is based on [the TensorFlow implementation](https://github.com/rajat95/Optical-Flow-Warping-Tensorflow).
 
 # Motivation
