@@ -37,7 +37,7 @@ def get_pixel_value(img, x, y):
 	idx1, idx2, idx3 = indices.long().chunk(3, dim=3)
 	return img[idx1, idx2, idx3].squeeze()
 
-def tf_warp(img, flow, H, W):
+def warp(img, flow, H, W):
 #   img batch,H,W,3
 	B, H, W, C = img.size()
 	xx = torch.arange(0, W).view(1,-1).repeat(H,1)
@@ -107,7 +107,7 @@ if __name__ == "__main__":
 	#img = torch.rand([1,384,512,3])
 	img = torch.from_numpy(img)
 	flow = torch.from_numpy(flow)
-	output = tf_warp(img, flow, 436, 1024)
+	output = warp(img, flow, 436, 1024)
 	output = output.numpy()
 	out = np.clip(output,0,255).astype('uint8')
 	#        print out.shape
